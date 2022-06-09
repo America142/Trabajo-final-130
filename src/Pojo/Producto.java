@@ -1,57 +1,61 @@
+/*
+Autor: América Yaridsaida Villalobos Rodríguez 
+Fecha de Creación:3/junio/2022
+Fecha de Actualización:9/junio/2022
+descripción:Es la clase más simple
 
+
+*/
 package Pojo;
 
-
 public class Producto {
-   
+
     private String id;
-	private String nombre;
-	private String precio;
-	private String cantidad;
+    private String nombre;
+    private String precio;
+    private String cantidad;
 
-	public Producto() {
-	}
-	
-	
+    public Producto() {
+    }
 
-	public Producto(String id, String nombre, String precio, String cantidad) {
-		super();
-		this.id = id;
-		this.nombre = nombre;
-		this.precio = precio;
-		this.cantidad = cantidad;
-	}
+    public Producto(String id, String nombre, String precio, String cantidad) {
+        super();
+        this.id = id;
+        this.nombre = nombre;
+        this.precio = precio;
+        this.cantidad = cantidad;
+    }
 
-	public String getId() {
-		return id;
-	}
+    public String getId() {
+        return id;
+    }
 
-	public void setId(String id) {
-		this.id = id;
-	}
+    public void setId(String id) {
+        this.id = id;
+    }
 
-	public String getNombre() {
-		return nombre;
-	}
+    public String getNombre() {
+        return nombre;
+    }
 
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
-	}
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-	public String getPrecio() {
-		return precio;
-	}
+    public String getPrecio() {
+        return precio;
+    }
 
-	public void setPrecio(String precio) {
-		this.precio = precio;
-	}
+    public void setPrecio(String precio) {
+        this.precio = precio;
+    }
 
-	public String getCantidad() {
-		return cantidad;
-	}
+    public String getCantidad() {
+        return cantidad;
+    }
 
-	public void setCantidad(String cantidad) {
-		this.cantidad = cantidad;
-	}
+    public void setCantidad(String cantidad) {
+        this.cantidad = cantidad;
+    }
 
 }

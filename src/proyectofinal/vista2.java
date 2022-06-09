@@ -1,7 +1,10 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+Autor: América Yaridsaida Villalobos Rodríguez 
+Fecha de Creación:3/junio/2022
+Fecha de Actualización:9/junio/2022
+descripción:es la vista donde se pueden agregar productos 
+
+*/
 package proyectofinal;
 
 import Controller.ProductoController;
@@ -17,7 +20,6 @@ public class vista2 extends javax.swing.JFrame {
 
     private DefaultTableModel modelo;
 
-    
     public vista2() {
         initComponents();
         productoController = new ProductoController();
