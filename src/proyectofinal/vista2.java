@@ -85,7 +85,7 @@ public class vista2 extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        panel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 240, 150, 50));
+        panel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 300, 150, 50));
 
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agotado(2).png"))); // NOI18N
         jButton3.setText("Eliminar");
@@ -94,7 +94,7 @@ public class vista2 extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        panel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 150, 50));
+        panel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 230, 150, 50));
 
         jLabel1.setFont(new java.awt.Font("Bitstream Charter", 3, 24)); // NOI18N
         jLabel1.setText("Productos");
