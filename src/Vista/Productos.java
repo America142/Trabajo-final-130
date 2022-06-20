@@ -16,18 +16,28 @@ import javax.swing.table.DefaultTableModel;
 
 public class Productos extends javax.swing.JFrame {
 
-    private Principal pri;
+  
     private ProductoController productoController;
     private List<Producto> listaProducto;
+     private DefaultTableModel modeloTable;
 
     private DefaultTableModel modelo;
 
     public Productos() {
         initComponents();
-        this.pri =new Principal();
+       
         productoController = new ProductoController();
         listaProducto = new ArrayList<>();
         modelo = (DefaultTableModel) jTable1.getModel();
+        
+        modeloTable = (DefaultTableModel) jTable1.getModel();     //Para que la lista no aparezca vacío ya estarán previamente cargados unos datos en la tabla
+        jTable1.setModel(modeloTable);
+        String fila[] = {"1", "Jabon", "10.5"};
+        modeloTable.addRow(fila);
+        String fila1[] = {"2", "Aceite", "1.5"};
+        modeloTable.addRow(fila1);
+        String fila2[] = {"3", "Atun", "8.5"};
+        modeloTable.addRow(fila2);
        
     }
 
@@ -38,9 +48,8 @@ public class Productos extends javax.swing.JFrame {
         panel1 = new java.awt.Panel();
         jPanel1 = new javax.swing.JPanel();
         agregar = new javax.swing.JButton();
-        Modificar = new javax.swing.JButton();
         Eliminar = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        Salida = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jTextField3 = new javax.swing.JTextField();
@@ -68,15 +77,6 @@ public class Productos extends javax.swing.JFrame {
             }
         });
 
-        Modificar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/editar.png"))); // NOI18N
-        Modificar.setText("Modificar");
-        Modificar.setBorderPainted(false);
-        Modificar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ModificarActionPerformed(evt);
-            }
-        });
-
         Eliminar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/agotado(2).png"))); // NOI18N
         Eliminar.setText("Eliminar");
         Eliminar.addActionListener(new java.awt.event.ActionListener() {
@@ -85,10 +85,10 @@ public class Productos extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-hacia-atras(1).png"))); // NOI18N
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salida(1).png"))); // NOI18N
+        Salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                SalidaActionPerformed(evt);
             }
         });
 
@@ -99,28 +99,25 @@ public class Productos extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 122, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(41, 41, 41)
+                        .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(38, Short.MAX_VALUE))
+                        .addGap(22, 22, 22)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(221, Short.MAX_VALUE)
+                .addContainerGap(285, Short.MAX_VALUE)
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGap(52, 52, 52)
                 .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(Modificar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(90, 90, 90)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(64, 64, 64))
+                .addGap(62, 62, 62)
+                .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(39, 39, 39))
         );
 
         panel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 0, 190, 610));
@@ -218,14 +215,6 @@ public class Productos extends javax.swing.JFrame {
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
        //Este boton es para eliminar  hara una validacion 
-        if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Si quieres eliminar tiene que aver campos llenos .");
-         }
-
-       else{ 
-         
-      
-
         String nombre = jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString();
         productoController.eliminarProducto(listaProducto, nombre);
         productoController.mostrarProductos(listaProducto, modelo);
@@ -233,33 +222,8 @@ public class Productos extends javax.swing.JFrame {
         jTextField2.setText("");
         jTextField3.setText("");
 
-           }
-     
+           
     }//GEN-LAST:event_EliminarActionPerformed
-
-    private void ModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ModificarActionPerformed
-      // la funcion modificar solo modifica si los campos esan llenos hace una validacion 
-        
-        if (jTextField1.getText().isEmpty() && jTextField2.getText().isEmpty() && jTextField3.getText().isEmpty()) {
-        JOptionPane.showMessageDialog(null, "Tienes que rellenar los campos.");
-         }
-
-       else{ 
-      
-        
-        Producto producto = new Producto();
-        producto.setId(jTextField1.getText());
-        producto.setNombre(jTextField2.getText());
-        producto.setPrecio(jTextField2.getText());
-        for (int i = 0; i < listaProducto.size(); i++) {
-            if (listaProducto.get(i).getNombre().compareTo(producto.getNombre()) == 0) {
-                listaProducto.set(i, producto); // actualizar el registro en la lista
-                //mostrarDatosTabla(); //recargar la tabla de alumnos
-                break;
-            }
-        }
-             } 
-    }//GEN-LAST:event_ModificarActionPerformed
 
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
         // este es el boton para agregar los productos a la tienda se hace una validacion de que los campos no esten vacios 
@@ -286,42 +250,16 @@ public class Productos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-         // el boton para regresar a la pagina principal
-         pri.setVisible(true);
+    private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
+        //System.exit(0); con este boton se regresara a la ventana principal
         this.hide();
-        
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SalidaActionPerformed
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Productos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+      
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Productos().setVisible(true);
@@ -331,9 +269,8 @@ public class Productos extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Eliminar;
-    private javax.swing.JButton Modificar;
+    private javax.swing.JButton Salida;
     private javax.swing.JButton agregar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

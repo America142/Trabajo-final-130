@@ -15,17 +15,17 @@ public class Compras extends javax.swing.JFrame {
 
     private DefaultTableModel modeloTable;
     private double suma = 0.0;
-    private Principal pri;
+  
     public Compras() {
         initComponents();
-        this.pri =new Principal();
+       
         modeloTable = (DefaultTableModel) jTable1.getModel();
         jTable1.setModel(modeloTable);
-        String fila[] = {"1", "Lápiz", "10.5"};
+        String fila[] = {"1", "Jabon", "10.5"};
         modeloTable.addRow(fila);
-        String fila1[] = {"2", "Lápiz", "1.5"};
+        String fila1[] = {"2", "Aceite", "20.5"};
         modeloTable.addRow(fila1);
-        String fila2[] = {"3", "Lápiz", "8.5"};
+        String fila2[] = {"3", "Frijol", "28.5"};
         modeloTable.addRow(fila2);
     }
 
@@ -47,7 +47,7 @@ public class Compras extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
-        Atras = new javax.swing.JButton();
+        salida = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -72,18 +72,18 @@ public class Compras extends javax.swing.JFrame {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(100, 100, 100))
+                .addGap(318, 318, 318))
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(35, 35, 35)
+                .addGap(39, 39, 39)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(283, Short.MAX_VALUE)
+                .addContainerGap(295, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
@@ -136,7 +136,7 @@ public class Compras extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel1.setText("total");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 470, 70, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 470, 80, 30));
 
         jButton3.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/pago-en-efectivo(1).png"))); // NOI18N
@@ -147,11 +147,11 @@ public class Compras extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 490, 140, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 490, 150, 40));
 
         jLabel2.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel2.setText("cambio");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 520, -1, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(383, 520, 80, -1));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -165,13 +165,13 @@ public class Compras extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 150, 730, 300));
 
-        Atras.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/flecha-atras(2).png"))); // NOI18N
-        Atras.addActionListener(new java.awt.event.ActionListener() {
+        salida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/salida(1).png"))); // NOI18N
+        salida.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AtrasActionPerformed(evt);
+                salidaActionPerformed(evt);
             }
         });
-        jPanel1.add(Atras, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 510, 90, 80));
+        jPanel1.add(salida, new org.netbeans.lib.awtextra.AbsoluteConstraints(830, 510, 80, 70));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -223,15 +223,14 @@ public class Compras extends javax.swing.JFrame {
     }//GEN-LAST:event_cambioActionPerformed
 
     private void pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarActionPerformed
-        // TODO add your handling code here:
+        // aqui es donde el usuario ingresa el monto a pagar
     }//GEN-LAST:event_pagarActionPerformed
 
-    private void AtrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AtrasActionPerformed
-        // el boton para regresar a la pagina principal
-         pri.setVisible(true);
+    private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
+        //este es el boton salir 
+        // System.exit(0);
         this.hide();
-        
-    }//GEN-LAST:event_AtrasActionPerformed
+    }//GEN-LAST:event_salidaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -270,7 +269,6 @@ public class Compras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Atras;
     private javax.swing.JTextField cambio;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -285,5 +283,6 @@ public class Compras extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField pagar;
+    private javax.swing.JButton salida;
     // End of variables declaration//GEN-END:variables
 }
