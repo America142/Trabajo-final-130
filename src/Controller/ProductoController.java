@@ -10,7 +10,7 @@ package Controller;
 import Pojo.Producto;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import model.ProductoModel;
+import Model.ProductoModel;
 
 public class ProductoController {
     // se instancia al Producto model

@@ -7,7 +7,7 @@ descripción:
 */
 
 
-package model;
+package Model;
 
 import Pojo.Producto;
 import java.util.List;
