@@ -24,11 +24,10 @@ public class Productos extends javax.swing.JFrame {
 
     public Productos(List<Producto> listaProducto) {
         initComponents();
-        
-        
+        //se crea un objeto producto Controller  se señala la lista de productos 
+        //se van insertando en la tabla 
         productoController = new ProductoController();
         
-   
         this.listaProducto = listaProducto;
         
         modelo = (DefaultTableModel) jTable1.getModel();
@@ -47,11 +46,9 @@ public class Productos extends javax.swing.JFrame {
         modeloTable.addRow(fila);
         
        }
-        
-        
+            
  
     }
-   
    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -265,7 +262,7 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarActionPerformed
 
     private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
-        //System.exit(0); con este boton se regresara a la ventana principal
+        //con este boton se regresara a la ventana principal y asi mismo envia la lista productos a la tabla de compras
         
         new Principal(listaProducto).setVisible(true);
         this.hide();

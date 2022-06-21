@@ -205,7 +205,8 @@ public class Compras extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        // en el boton de añadir al carrito se van sumando los productos
+       //se valida que no se seleccionen campos vacios
         if (jTable1.getSelectedRow() > -1) {
             double precio = Double.parseDouble(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
             this.suma = suma + precio;
@@ -222,7 +223,7 @@ public class Compras extends javax.swing.JFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         // aqui se hace la resta para darle su cambio al usuario
         double pagar = Double.parseDouble(this.pagar.getText());
-        // double suma = Double.parseDouble(this.suma.getText());
+        
         cambio.setText(String.valueOf(pagar - suma));
 
     }//GEN-LAST:event_jButton3ActionPerformed
