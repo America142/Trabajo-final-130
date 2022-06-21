@@ -102,7 +102,7 @@ public class Principal extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        
+        //Este es el boton para ir a las compras 
         new Compras(listaProducto).setVisible(true);
         this.hide();
 

@@ -249,7 +249,6 @@ public class Productos extends javax.swing.JFrame {
             producto.setNombre(Nombre.getText());
             producto.setPrecio(Id.getText());
             
-           
             Precio.setText("");
             Nombre.setText("");
             Id.setText("");

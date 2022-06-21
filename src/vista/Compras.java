@@ -238,7 +238,6 @@ public class Compras extends javax.swing.JFrame {
 
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
         //este es el boton salir 
-        // System.exit(0);
         this.hide();
     }//GEN-LAST:event_salidaActionPerformed
 
