@@ -59,18 +59,18 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
-                              <Component id="Salida" min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace min="-2" pref="22" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="agregar" alignment="0" min="-2" pref="146" max="-2" attributes="0"/>
                                   <Component id="Eliminar" min="-2" pref="146" max="-2" attributes="0"/>
                               </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                              <Component id="Salida" min="-2" pref="102" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace pref="22" max="32767" attributes="0"/>
@@ -82,11 +82,11 @@
                   <Group type="102" alignment="1" attributes="0">
                       <EmptySpace pref="285" max="32767" attributes="0"/>
                       <Component id="agregar" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                       <Component id="Eliminar" min="-2" pref="50" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="57" max="-2" attributes="0"/>
                       <Component id="Salida" min="-2" pref="72" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -132,7 +132,7 @@
           </AuxValues>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="20" y="200" width="750" height="390"/>
+              <AbsoluteConstraints x="30" y="190" width="750" height="390"/>
             </Constraint>
           </Constraints>
 
@@ -140,6 +140,16 @@
           <SubComponents>
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
+                <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+                  <Border info="org.netbeans.modules.form.compat2.border.TitledBorderInfo">
+                    <TitledBorder>
+                      <Color PropertyName="color" blue="ff" green="0" red="66" type="rgb"/>
+                    </TitledBorder>
+                  </Border>
+                </Property>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Waree" size="10" style="3"/>
+                </Property>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="3" rowCount="0">
                     <Column editable="true" title="Id" type="java.lang.Object"/>
@@ -176,13 +186,14 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="Id">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField3ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="IdActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="IdKeyTyped"/>
           </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="100" y="160" width="90" height="-1"/>
+              <AbsoluteConstraints x="650" y="160" width="90" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -195,14 +206,14 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="50" y="160" width="-1" height="-1"/>
+              <AbsoluteConstraints x="90" y="150" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="Nombre">
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="360" y="160" width="90" height="-1"/>
+              <AbsoluteConstraints x="400" y="160" width="90" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -218,7 +229,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="270" y="150" width="-1" height="-1"/>
+              <AbsoluteConstraints x="300" y="150" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -231,17 +242,7 @@
           </Properties>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="540" y="150" width="-1" height="-1"/>
-            </Constraint>
-          </Constraints>
-        </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
-          <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTextField1ActionPerformed"/>
-          </Events>
-          <Constraints>
-            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-              <AbsoluteConstraints x="620" y="160" width="80" height="-1"/>
+              <AbsoluteConstraints x="570" y="150" width="-1" height="-1"/>
             </Constraint>
           </Constraints>
         </Component>
@@ -261,26 +262,18 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel5" min="-2" pref="110" max="-2" attributes="0"/>
-                      <EmptySpace pref="145" max="32767" attributes="0"/>
+                      <EmptySpace pref="190" max="32767" attributes="0"/>
                       <Component id="jLabel1" min="-2" pref="510" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLabel5" pref="0" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
-                              <Component id="jLabel1" min="-2" pref="59" max="-2" attributes="0"/>
-                              <EmptySpace min="0" pref="40" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Component id="jLabel1" min="-2" pref="59" max="-2" attributes="0"/>
+                      <EmptySpace pref="54" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -294,15 +287,19 @@
                 <Property name="text" type="java.lang.String" value="jLabel1"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel5">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/img/fondo2.png"/>
-                </Property>
-              </Properties>
-            </Component>
           </SubComponents>
         </Container>
+        <Component class="javax.swing.JTextField" name="Precio">
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PrecioActionPerformed"/>
+            <EventHandler event="keyTyped" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="PrecioKeyTyped"/>
+          </Events>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
+              <AbsoluteConstraints x="130" y="160" width="110" height="-1"/>
+            </Constraint>
+          </Constraints>
+        </Component>
       </SubComponents>
     </Container>
   </SubComponents>

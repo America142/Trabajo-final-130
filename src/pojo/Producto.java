@@ -1,12 +1,11 @@
 /*
 Autor: América Yaridsaida Villalobos Rodríguez 
 Fecha de Creación:3/junio/2022
-Fecha de Actualización:9/junio/2022
+Fecha de Actualización:20/junio/2022
 descripción:Es la clase más simple
 
-
 */
-package Pojo;
+package pojo;
 
 public class Producto {
 

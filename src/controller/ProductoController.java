@@ -1,16 +1,15 @@
 /*
 Autor: América Yaridsaida Villalobos Rodríguez 
 Fecha de Creación:3/junio/2022
-Fecha de Actualización:9/junio/2022
+Fecha de Actualización:20/junio/2022
 descripción:
+ */
+package controller;
 
-*/
-package Controller;
-
-import Pojo.Producto;
+import pojo.Producto;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
-import Model.ProductoModel;
+import model.ProductoModel;
 
 public class ProductoController {
     // se instancia al Producto model
