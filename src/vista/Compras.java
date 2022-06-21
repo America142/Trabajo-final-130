@@ -24,6 +24,7 @@ public class Compras extends javax.swing.JFrame {
 
     public Compras() {
         initComponents();
+        this.setLocationRelativeTo(null);
 
         
     }
@@ -35,11 +36,10 @@ public class Compras extends javax.swing.JFrame {
         this.listaProducto = listaProducto;
         modeloTable = (DefaultTableModel) jTable1.getModel();
         productoController.mostrarProductos(listaProducto, modeloTable);
-        
-
-     
+             
     }
     
+    // se crea el constructor de actualizar la lista 
     public void actualizarList(List<Producto> lista){
         this.listaProducto = lista;
     }
@@ -85,16 +85,16 @@ public class Compras extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(23, 23, 23)
+                .addGap(25, 25, 25)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addContainerGap(41, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap(289, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                .addContainerGap(336, Short.MAX_VALUE)
                 .addComponent(jButton2)
-                .addGap(121, 121, 121))
+                .addGap(74, 74, 74))
         );
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 480));
@@ -127,24 +127,24 @@ public class Compras extends javax.swing.JFrame {
                 pagarActionPerformed(evt);
             }
         });
-        jPanel1.add(pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 530, 150, -1));
+        jPanel1.add(pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 540, 150, -1));
 
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 490, 150, -1));
+        jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 500, 150, -1));
 
         cambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cambioActionPerformed(evt);
             }
         });
-        jPanel1.add(cambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(530, 560, 150, -1));
+        jPanel1.add(cambio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 570, 150, -1));
 
         jLabel1.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
-        jLabel1.setText("total");
+        jLabel1.setText("Total");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 490, 80, 30));
 
         jButton3.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
@@ -157,10 +157,10 @@ public class Compras extends javax.swing.JFrame {
                 jButton3ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 520, 150, 40));
+        jPanel1.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 520, 150, 40));
 
         jLabel2.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
-        jLabel2.setText("cambio");
+        jLabel2.setText("Cambio");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 560, 80, -1));
 
         jTable1.setForeground(new java.awt.Color(51, 0, 51));

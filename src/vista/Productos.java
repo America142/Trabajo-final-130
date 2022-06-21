@@ -44,6 +44,7 @@ public class Productos extends javax.swing.JFrame {
         fila[2]=listaProducto.get(i).getPrecio();
         
         modeloTable.addRow(fila);
+        this.setLocationRelativeTo(null);
         
        }
             
@@ -143,7 +144,7 @@ public class Productos extends javax.swing.JFrame {
         jTable1.setSelectionBackground(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(jTable1);
 
-        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 190, 750, 390));
+        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 200, 740, 390));
 
         Id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,7 +156,7 @@ public class Productos extends javax.swing.JFrame {
                 IdKeyTyped(evt);
             }
         });
-        panel1.add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 160, 90, -1));
+        panel1.add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 160, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel2.setText("Id");
@@ -169,7 +170,7 @@ public class Productos extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel4.setText("Precio");
-        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 150, -1, -1));
+        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 150, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 153));
 
@@ -248,8 +249,7 @@ public class Productos extends javax.swing.JFrame {
             producto.setNombre(Nombre.getText());
             producto.setPrecio(Id.getText());
             
-            
-            
+           
             Precio.setText("");
             Nombre.setText("");
             Id.setText("");
@@ -262,8 +262,7 @@ public class Productos extends javax.swing.JFrame {
     }//GEN-LAST:event_agregarActionPerformed
 
     private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
-        //con este boton se regresara a la ventana principal y asi mismo envia la lista productos a la tabla de compras
-        
+        //con este boton se regresara a la ventana principal y asi mismo envia la lista productos a la tabla de compras 
         new Principal(listaProducto).setVisible(true);
         this.hide();
     }//GEN-LAST:event_SalidaActionPerformed

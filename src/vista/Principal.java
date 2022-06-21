@@ -22,6 +22,7 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         listaProducto = new ArrayList<>();
         listaProducto = UtilidadesProducto.cargarProductos(listaProducto);
+        this.setLocationRelativeTo(null);
         
     }
     
@@ -78,7 +79,7 @@ public class Principal extends javax.swing.JFrame {
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 350, 400));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/despensa1.jpg"))); // NOI18N
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 280, 300, 180));
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 300, 180));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
