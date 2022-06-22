@@ -22,7 +22,8 @@ public class Principal extends javax.swing.JFrame {
         initComponents();
         listaProducto = new ArrayList<>();
         listaProducto = UtilidadesProducto.cargarProductos(listaProducto);
-        this.setLocationRelativeTo(null);
+        setResizable(false);
+        setLocationRelativeTo(null);
         
     }
     

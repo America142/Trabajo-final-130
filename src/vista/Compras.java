@@ -24,8 +24,7 @@ public class Compras extends javax.swing.JFrame {
 
     public Compras() {
         initComponents();
-        this.setLocationRelativeTo(null);
-
+       
         
     }
     
@@ -36,6 +35,9 @@ public class Compras extends javax.swing.JFrame {
         this.listaProducto = listaProducto;
         modeloTable = (DefaultTableModel) jTable1.getModel();
         productoController.mostrarProductos(listaProducto, modeloTable);
+         setResizable(false);
+        setLocationRelativeTo(null);
+
              
     }
     
@@ -244,7 +246,10 @@ public class Compras extends javax.swing.JFrame {
 
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
         //este es el boton salir 
-        this.hide();
+        //this.hide();
+        Principal principal = new Principal();
+        principal.setVisible(true);
+        dispose();
     }//GEN-LAST:event_salidaActionPerformed
 
    
