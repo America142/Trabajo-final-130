@@ -32,6 +32,8 @@ public class Principal extends javax.swing.JFrame {
 
         this.listaProducto = listaProducto;
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
     }
 
     @SuppressWarnings("unchecked")
