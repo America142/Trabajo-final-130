@@ -64,7 +64,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 140, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 140, 50));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cesta-de-la-compra.png"))); // NOI18N
         jButton2.setText("Compras");
@@ -74,7 +74,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 260, 140, 50));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 140, 50));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/uno-removebg-preview1.png"))); // NOI18N
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 350, 400));
