@@ -14,6 +14,7 @@ import utilidades.UtilidadesProducto;
 
 public class Principal extends javax.swing.JFrame {
 // se declaran las variables 
+
     private Productos v2;
     private Compras v3;
     private List<Producto> listaProducto;
@@ -24,11 +25,10 @@ public class Principal extends javax.swing.JFrame {
         listaProducto = UtilidadesProducto.cargarProductos(listaProducto);
         setResizable(false);
         setLocationRelativeTo(null);
-        
+
     }
-    
+
     public Principal(List<Producto> listaProducto) {
-        
 
         this.listaProducto = listaProducto;
         initComponents();
@@ -66,7 +66,7 @@ public class Principal extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 270, 140, 50));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 270, 140, 50));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/cesta-de-la-compra.png"))); // NOI18N
         jButton2.setText("Compras");
@@ -115,7 +115,6 @@ public class Principal extends javax.swing.JFrame {
         // este es el boton para ir a los productos y se crea una Produvtos lista 
         new Productos(listaProducto).setVisible(true);
         this.hide();
-        
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
