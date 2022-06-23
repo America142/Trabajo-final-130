@@ -1,7 +1,7 @@
 /*
 Autor: América Yaridsaida Villalobos Rodríguez 
 Fecha de Creación:3/junio/2022
-Fecha de Actualización:9/junio/2022
+Fecha de Actualización:23/junio/2022
 descripción:Esta es la última ventana
 
  */
@@ -16,37 +16,45 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 public class Compras extends javax.swing.JFrame {
-    // declaraciòn de datatable
-
+    /** 
+    /*declaraciòn de datatable, suma y list
+    */
     private DefaultTableModel modeloTable;
     private double suma = 0.0;
     public List<Producto> listaProducto = new ArrayList<>();
     private ProductoController productoController;
     private DefaultListModel modelo = new DefaultListModel();
 
+    /**
+    /* contrurtror vacio de compras 
+    */
     public Compras() {
         initComponents();
-       
-        
+
     }
-    
+
     public Compras(List<Producto> listaProducto) {
-        initComponents();
-       
-        productoController = new ProductoController();
-        this.listaProducto = listaProducto;
-        modeloTable = (DefaultTableModel) jTable1.getModel();
-        productoController.mostrarProductos(listaProducto, modeloTable);
-         setResizable(false);
-        setLocationRelativeTo(null);
-        
+    /**
+    /* instancia,se crea que la pagina no se mueva
+    */
+    initComponents();  
+    productoController = new ProductoController();
+    this.listaProducto = listaProducto;
+    modeloTable = (DefaultTableModel) jTable1.getModel();
+    productoController.mostrarProductos(listaProducto, modeloTable);
+    setResizable(false);
+    setLocationRelativeTo(null);
+
     }
-    
-    // se crea el constructor de actualizar la lista 
-    public void actualizarList(List<Producto> lista){
+
+  
+    public void actualizarList(List<Producto> lista) {
+        /**
+         * se crea el constructor de actualizar la lista 
+         */
         this.listaProducto = lista;
     }
-    
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -67,7 +75,8 @@ public class Compras extends javax.swing.JFrame {
         jTable1 = new javax.swing.JTable();
         jScrollPane2 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
+        Carrito = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -95,37 +104,40 @@ public class Compras extends javax.swing.JFrame {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(362, Short.MAX_VALUE)
+                .addContainerGap(322, Short.MAX_VALUE)
                 .addComponent(salida)
                 .addGap(48, 48, 48))
         );
 
-        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 120, 160, 480));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 160, 440));
 
         jPanel3.setBackground(new java.awt.Color(153, 0, 153));
 
         jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo_smallCompras.png"))); // NOI18N
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos2.png"))); // NOI18N
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/producto3.1_1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(43, 43, 43)
                 .addComponent(jLabel4)
-                .addGap(81, 81, 81)
+                .addGap(160, 160, 160)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 509, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(778, Short.MAX_VALUE))
+                .addContainerGap(683, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(26, 26, 26)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel4)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE))
+                .addContainerGap())
         );
 
         jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, -1));
@@ -142,6 +154,7 @@ public class Compras extends javax.swing.JFrame {
         });
         jPanel1.add(pagar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 510, 150, -1));
 
+        jTextField1.setEditable(false);
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jTextField1ActionPerformed(evt);
@@ -149,6 +162,7 @@ public class Compras extends javax.swing.JFrame {
         });
         jPanel1.add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1040, 470, 150, -1));
 
+        cambio.setEditable(false);
         cambio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cambioActionPerformed(evt);
@@ -189,21 +203,25 @@ public class Compras extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(jTable1);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 170, 580, 300));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 190, 580, 300));
 
         jList1.setToolTipText("");
         jScrollPane2.setViewportView(jList1);
 
-        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 180, 320, 240));
+        jPanel1.add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 230, 390, 210));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/anadir-al-carrito(1).png"))); // NOI18N
-        jButton2.setContentAreaFilled(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        Carrito.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/anadir-al-carrito(1).png"))); // NOI18N
+        Carrito.setContentAreaFilled(false);
+        Carrito.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                CarritoActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 500, 94, -1));
+        jPanel1.add(Carrito, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 510, 94, -1));
+
+        jLabel5.setFont(new java.awt.Font("Waree", 3, 14)); // NOI18N
+        jLabel5.setText("Lista de tus productos a comprar ");
+        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 180, 280, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -224,68 +242,77 @@ public class Compras extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+/**
+ * en el boton de añadir al carrito se van sumando los productos
+ */
+    private void CarritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarritoActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // en el boton de añadir al carrito se van sumando los productos
-       //se valida que no se seleccionen campos vacios
         if (jTable1.getSelectedRow() > -1) {
             double precio = Double.parseDouble(jTable1.getValueAt(jTable1.getSelectedRow(), 2).toString());
             this.suma = suma + precio;
             jTextField1.setText(String.valueOf(suma));
-           
-         modelo.addElement(jTable1.getValueAt(jTable1.getSelectedRow(),jTable1.getSelectedColumn()));
-        jList1.setModel(modelo);
-        
-        } else {
-            JOptionPane.showMessageDialog(null, "Seleciona un registro de la tabla.");
+
+            modelo.addElement(jTable1.getValueAt(jTable1.getSelectedRow(), 1));
+            modelo.addElement(jTable1.getValueAt(jTable1.getSelectedColumn(), 2));
+            jList1.setModel(modelo);
+
         }
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_CarritoActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
-      
+
     }//GEN-LAST:event_jTextField1ActionPerformed
 
+    /**
+     *  aqui se hace la resta para darle su cambio al usuario
+     */
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // aqui se hace la resta para darle su cambio al usuario
         double pagar = Double.parseDouble(this.pagar.getText());
-        
-        cambio.setText(String.valueOf(pagar - suma));
-
+        if(suma>pagar){
+            JOptionPane.showMessageDialog(null, "Ingrese una cantidad mayor a su total");
+        }else{
+            cambio.setText(String.valueOf(pagar - suma));
+        }
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void cambioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cambioActionPerformed
-   
+
     }//GEN-LAST:event_cambioActionPerformed
 
     private void pagarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pagarActionPerformed
-        // aqui es donde el usuario ingresa el monto a pagar
+       
     }//GEN-LAST:event_pagarActionPerformed
 
+    /**
+     * regresa a la ventana principal
+     */
     private void salidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_salidaActionPerformed
-        //este es el boton salir 
-        //this.hide();
         Principal principal = new Principal();
         principal.setVisible(true);
         dispose();
     }//GEN-LAST:event_salidaActionPerformed
 
+    /**
+     * valida que no entren numeros 
+     */
     private void pagarKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_pagarKeyTyped
-         char letra = evt.getKeyChar();
+        char letra = evt.getKeyChar();
         if (Character.isLetter(letra)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se admiten numeros");
         }
     }//GEN-LAST:event_pagarKeyTyped
 
-   
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Carrito;
     private javax.swing.JTextField cambio;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;

@@ -1,7 +1,7 @@
 /*
 Autor: América Yaridsaida Villalobos Rodríguez 
 Fecha de Creación:21/junio/2022
-Fecha de Actualización:21/junio/2022
+Fecha de Actualización:23/junio/2022
 descripción: En la clase utilidades se creó para carga la lista de productos 
 
  */

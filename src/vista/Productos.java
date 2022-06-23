@@ -1,7 +1,7 @@
 /*
 Autor: América Yaridsaida Villalobos Rodríguez 
 Fecha de Creación:3/junio/2022
-Fecha de Actualización:9/junio/2022
+Fecha de Actualización:23/junio/2022
 descripción:es la vista donde se pueden agregar productos 
 
  */
@@ -23,8 +23,10 @@ public class Productos extends javax.swing.JFrame {
 
     public Productos(List<Producto> listaProducto) {
         initComponents();
-        //se crea un objeto producto Controller  se señala la lista de productos 
-        //se van insertando en la tabla 
+        
+        /**se crea un objeto producto Controller  se señala la lista de productos 
+        *se van insertando en la tabla
+        */
         productoController = new ProductoController();
 
         this.listaProducto = listaProducto;
@@ -111,9 +113,9 @@ public class Productos extends javax.swing.JFrame {
                             .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 152, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(44, 44, 44)
+                        .addGap(40, 40, 40)
                         .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 99, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -122,12 +124,12 @@ public class Productos extends javax.swing.JFrame {
                 .addComponent(agregar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(48, 48, 48)
                 .addComponent(Eliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(53, 53, 53)
+                .addGap(43, 43, 43)
                 .addComponent(Salida, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(68, 68, 68))
+                .addGap(78, 78, 78))
         );
 
-        panel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 190, 500));
+        panel1.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 200, 500));
 
         jTable1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Liberation Sans", 0, 15), new java.awt.Color(102, 0, 255))); // NOI18N
         jTable1.setFont(new java.awt.Font("Waree", 3, 10)); // NOI18N
@@ -142,7 +144,7 @@ public class Productos extends javax.swing.JFrame {
         jTable1.setSelectionBackground(new java.awt.Color(153, 153, 255));
         jScrollPane1.setViewportView(jTable1);
 
-        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 230, 720, 390));
+        panel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 220, 730, 390));
 
         Id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,48 +156,61 @@ public class Productos extends javax.swing.JFrame {
                 IdKeyTyped(evt);
             }
         });
-        panel1.add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 170, 90, -1));
+        panel1.add(Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 170, 90, -1));
 
         jLabel2.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel2.setText("Id");
-        panel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 170, 20, -1));
-        panel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 90, -1));
+        panel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 160, 20, -1));
+
+        Nombre.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                NombreActionPerformed(evt);
+            }
+        });
+        Nombre.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                NombreKeyTyped(evt);
+            }
+        });
+        panel1.add(Nombre, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 170, 90, -1));
 
         jLabel3.setBackground(new java.awt.Color(255, 255, 255));
         jLabel3.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel3.setText("Nombre");
-        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, -1, -1));
+        panel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 160, -1, -1));
 
         jLabel4.setFont(new java.awt.Font("Waree", 3, 18)); // NOI18N
         jLabel4.setText("Precio");
-        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, -1, -1));
+        panel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 160, -1, -1));
 
         jPanel2.setBackground(new java.awt.Color(153, 0, 153));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/logo_small_1.png"))); // NOI18N
         jLabel1.setText("jLabel1");
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/productos2.png"))); // NOI18N
+        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/producto3.1_1.jpg"))); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addGap(24, 24, 24)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 158, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jLabel5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(157, 157, 157))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                .addContainerGap(43, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(13, 13, 13))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(38, 38, 38))
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(11, Short.MAX_VALUE))
         );
 
         panel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1010, 140));
@@ -210,7 +225,7 @@ public class Productos extends javax.swing.JFrame {
                 PrecioKeyTyped(evt);
             }
         });
-        panel1.add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 170, 110, -1));
+        panel1.add(Precio, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 170, 110, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -229,9 +244,10 @@ public class Productos extends javax.swing.JFrame {
     private void IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_IdActionPerformed
 
     }//GEN-LAST:event_IdActionPerformed
-
+/**
+ * Este boton es para eliminar
+ */
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
-        //Este boton es para eliminar  hara una validacion 
         String nombre = jTable1.getValueAt(jTable1.getSelectedRow(), 1).toString();
         productoController.eliminarProducto(listaProducto, nombre);
         productoController.mostrarProductos(listaProducto, modelo);
@@ -242,8 +258,11 @@ public class Productos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_EliminarActionPerformed
 
+    /**
+     *  este es el boton para agregar los productos a la tienda se hace una validacion de que los campos no esten vacios 
+     */
     private void agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_agregarActionPerformed
-        // este es el boton para agregar los productos a la tienda se hace una validacion de que los campos no esten vacios 
+   
         if (Precio.getText().isEmpty() && Nombre.getText().isEmpty() && Id.getText().isEmpty()) {
             JOptionPane.showMessageDialog(null, "Tienes que rellenar los campos.");
         } else {
@@ -262,11 +281,10 @@ public class Productos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_agregarActionPerformed
 
+    /**
+     * con este boton se regresara a la ventana principa
+     */
     private void SalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SalidaActionPerformed
-        //con este boton se regresara a la ventana principal y asi mismo envia la lista productos a la tabla de compras y se termina el programa 
-        //new Principal(listaProducto).setVisible(true);
-        //this.hide();
-
         Principal principal = new Principal(listaProducto);
         principal.setVisible(true);
         dispose();
@@ -276,8 +294,10 @@ public class Productos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_PrecioActionPerformed
 
+    /**
+     * Este es codigo para validar que no entren numeros 
+     */
     private void PrecioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_PrecioKeyTyped
-        //Este es codigo para validar la entrada de los id 
         char letra = evt.getKeyChar();
         if (Character.isLetter(letra)) {
             evt.consume();
@@ -285,14 +305,30 @@ public class Productos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_PrecioKeyTyped
 
+    /**
+     * Este es codigo para validar que no entren numeros 
+     */
     private void IdKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_IdKeyTyped
-        // TODO add your handling code here:
         char letra = evt.getKeyChar();
         if (Character.isLetter(letra)) {
             evt.consume();
             JOptionPane.showMessageDialog(null, "Solo se admiten numeros");
         }
+        
     }//GEN-LAST:event_IdKeyTyped
+
+    private void NombreActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NombreActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_NombreActionPerformed
+
+    /**
+    * valida que no entren letras
+    */
+    private void NombreKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NombreKeyTyped
+        char c = evt.getKeyChar();
+        if((c< 'a' || c> 'z') && (c< 'A') |(c> 'Z'))
+            evt.consume();
+    }//GEN-LAST:event_NombreKeyTyped
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
